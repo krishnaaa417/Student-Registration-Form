@@ -19,9 +19,9 @@ namespace Student_Registration_Form.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string Username, string Password)
+        public IActionResult Login(string Email, string Password)
         {
-            var admin = _appDbContext.Admins.FirstOrDefault(a => a.Email == Username && a.Password == Password);
+            var admin = _appDbContext.Admins.FirstOrDefault(a => a.Email == Email && a.Password == Password );
 
             if (admin != null)
             {

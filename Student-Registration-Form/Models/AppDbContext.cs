@@ -6,7 +6,7 @@ namespace Student_Registration_Form.Models
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            
+
         }
 
         public DbSet<Course> Courses { get; set; }
@@ -44,13 +44,13 @@ namespace Student_Registration_Form.Models
                     Email = "krishna@gmail.com",
                     Password = "krishna123"
                 },
-        new Admin
-        {
-            Id = 3,
-            Email = "superadmin@gmail.com",
-            Password = "super123"
-        }
-                );
+               new Admin
+               {
+                   Id = 3,
+                   Email = "superadmin@gmail.com",
+                   Password = "super123"
+               }
+             );
         }
     }
 }
