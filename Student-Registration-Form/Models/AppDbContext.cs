@@ -37,7 +37,19 @@ namespace Student_Registration_Form.Models
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Admin>().HasData(
-                new Admin { Id = 1, Email = "admin@gmail.com", Password = "admin@123" }
+                new Admin { Id = 1, Email = "admin@gmail.com", Password = "admin@123" },
+                new Admin
+                {
+                    Id = 2,
+                    Email = "krishna@gmail.com",
+                    Password = "krishna123"
+                },
+        new Admin
+        {
+            Id = 3,
+            Email = "superadmin@gmail.com",
+            Password = "super123"
+        }
                 );
         }
     }
