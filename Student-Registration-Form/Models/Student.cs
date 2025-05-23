@@ -6,7 +6,7 @@ namespace Student_Registration_Form.Models
     public class Student
     {
         public int Id { get; set; }
-       // public int Id { get; set; }
+       
 
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
@@ -22,15 +22,13 @@ namespace Student_Registration_Form.Models
 
         public string Address { get; set; }
 
-        // Foreign key to Course
-      //  [Required(ErrorMessage = "Course is required")]
+       
         public int CourseId { get; set; }
 
         [ForeignKey("CourseId")]
         public Course Course { get; set; }
 
-        // Foreign key to Incharge
-       // [Required(ErrorMessage = "Incharge is required")]
+        
         public int InchargeId { get; set; }
 
         [ForeignKey("InchargeId")]

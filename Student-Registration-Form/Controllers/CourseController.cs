@@ -12,14 +12,13 @@ namespace Student_Registration_Form.Controllers
             _appDbContext = appDbContext;
         }
 
-        //HTTP GET / Course
         public IActionResult Index()
         {
             var course = _appDbContext.Courses.ToList();
             return View(course);
         }
 
-        //GET :/Course//CREATE
+   
         public IActionResult Create()
         {
             return View();
@@ -44,7 +43,7 @@ namespace Student_Registration_Form.Controllers
             return View(course);
         }
 
-        //GET //EDIT / 5
+   
         public IActionResult Edit(int id)
         {
             var course = _appDbContext.Courses.Find(id);
@@ -52,7 +51,7 @@ namespace Student_Registration_Form.Controllers
             return View(course);
         }
 
-        // POST: /Course/Edit/5
+        
         [HttpPost]
         public IActionResult Edit(Course course)
         {
@@ -67,7 +66,7 @@ namespace Student_Registration_Form.Controllers
             return View(course);
         }
 
-        // GET: /Course/Delete/5
+        
         public IActionResult Delete(int id)
         {
             var course = _appDbContext.Courses.Find(id);
@@ -75,7 +74,7 @@ namespace Student_Registration_Form.Controllers
             return View(course);
         }
 
-        // POST: /Course/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
@@ -85,7 +84,7 @@ namespace Student_Registration_Form.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: /Course/Details/5
+       
         public IActionResult Details(int id)
         {
             var course = _appDbContext.Courses.Find(id);
