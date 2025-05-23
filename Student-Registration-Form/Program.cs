@@ -35,7 +35,7 @@ namespace Student_Registration_Form
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Admin}/{action=Login}/{id?}");
+                pattern: "{controller=Course}/{action=Index}/{id?}");
 
             app.Run();
         }
