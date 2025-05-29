@@ -12,8 +12,8 @@ using Student_Registration_Form.Models;
 namespace Student_Registration_Form.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250519104050_ER-Relationships")]
-    partial class ERRelationships
+    [Migration("20250520175813_UpdateInchageController")]
+    partial class UpdateInchageController
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,18 @@ namespace Student_Registration_Form.Migrations
                             Id = 1,
                             Email = "admin@gmail.com",
                             Password = "admin@123"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "krishna@gmail.com",
+                            Password = "krishna123"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "superadmin@gmail.com",
+                            Password = "super123"
                         });
                 });
 
@@ -169,7 +181,7 @@ namespace Student_Registration_Form.Migrations
                         .IsRequired();
 
                     b.HasOne("Student_Registration_Form.Models.Incharge", "Incharge")
-                        .WithMany()
+                        .WithMany("Students")
                         .HasForeignKey("InchargeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -182,6 +194,11 @@ namespace Student_Registration_Form.Migrations
             modelBuilder.Entity("Student_Registration_Form.Models.Course", b =>
                 {
                     b.Navigation("Incharges");
+                });
+
+            modelBuilder.Entity("Student_Registration_Form.Models.Incharge", b =>
+                {
+                    b.Navigation("Students");
                 });
 #pragma warning restore 612, 618
         }

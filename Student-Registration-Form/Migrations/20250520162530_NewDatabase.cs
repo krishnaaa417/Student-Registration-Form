@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Student_Registration_Form.Migrations
 {
     /// <inheritdoc />
-    public partial class ERRelationships : Migration
+    public partial class NewDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -96,7 +98,12 @@ namespace Student_Registration_Form.Migrations
             migrationBuilder.InsertData(
                 table: "Admins",
                 columns: new[] { "Id", "Email", "Password" },
-                values: new object[] { 1, "admin@gmail.com", "admin@123" });
+                values: new object[,]
+                {
+                    { 1, "admin@gmail.com", "admin@123" },
+                    { 2, "krishna@gmail.com", "krishna123" },
+                    { 3, "superadmin@gmail.com", "super123" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Incharges_CourseId",
