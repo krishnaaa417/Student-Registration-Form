@@ -10,6 +10,7 @@ namespace StudentFormWithADO.NET.Controllers
     public class AdminController : Controller
     {
         private readonly Helper _db;
+        // the helper class provides  a method to establish a SQL database connection using a connection string retrieved from the provided configuration.
 
         public AdminController(Helper db)
         {
