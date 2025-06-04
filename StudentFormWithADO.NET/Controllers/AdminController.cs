@@ -37,7 +37,7 @@ namespace StudentFormWithADO.NET.Controllers
                 var reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    // Login successful
+                    
                     return RedirectToAction("Index", "Student");
                 }
             }
