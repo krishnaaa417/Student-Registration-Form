@@ -15,6 +15,7 @@ namespace Student_Registration_Form
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //builder.Services.AddSingleton<Helper>();
 
             var app = builder.Build();
 
