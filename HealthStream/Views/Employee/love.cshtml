@@ -1,0 +1,17 @@
+﻿@using HealthStream.Models
+@model AdminModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@Html.TextBox("FName");
+@Html.TextBox("LName");
+
+<button>Save</button>
+
+
+@Html.TextBoxFor(x=>x.FName)
+
+<h1>Index</h1>
